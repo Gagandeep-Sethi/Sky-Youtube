@@ -12,8 +12,8 @@ const Header = () => {
             placeholder='Search'
             >
             </input>
-            <button>
-                <img className='h-10 px-3 py-2 w-12  border border-gray-400 rounded-r-full' alt="Search" src={search_logo}></img>
+            <button className='h-10 bg-gray-100  rounded-r-full border border-gray-400 hover:bg-gray-200  '>
+                <img className='h-10 px-3 py-2 w-12 rounded-full ' alt="Search" src={search_logo}></img>
             </button>
 
         </div>
@@ -25,3 +25,4 @@ const Header = () => {
 }
 
 export default Header
+// border border-gray-400 rounded-r-full
