@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux'
 const Sidebar = () => {
-  return (
-    <div className=' border border-black h-screen'>
+  const clicked=useSelector(store=>store.app.openSide)
+  if(clicked)
+  return (null)
+  return  (
+    
+      <div className=' w-[237.33px]    '>
         <ul>
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Home</li>
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Shorts</li>
@@ -15,9 +19,10 @@ const Sidebar = () => {
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> News</li>
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Sports</li>
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Podcasts</li>
+            
         </ul>
-
-    </div>
+        </div>
+   
   )
 }
 

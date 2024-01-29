@@ -1,15 +1,16 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import ButtonList from './ButtonList'
-import MainContainer from './MainContainer'
+import VideoContainer from './VideoContainer'
 const Body = () => {
+  
   return (
-    <div className="flex">
-        <div className='w-2/12'>
+    <div className="flex w-screen">
+        <div >
         <Sidebar/></div>
-        <div className='w-10/12 '>
+        <div >
         <ButtonList/>
-        <MainContainer/></div>
+        <VideoContainer/></div>
     </div>
   )
 }

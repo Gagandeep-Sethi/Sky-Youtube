@@ -2,7 +2,8 @@ import React from 'react'
 
 const ButtonList = () => {
   return (
-    <div className='border border-black'>
+    <div className='  h-16 flex  overflow-x-scroll  w-[1186.66px] '>
+      
         <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>All</button>
         <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Music</button>
         <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>News</button>
@@ -15,7 +16,16 @@ const ButtonList = () => {
         <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Indian Pop Music</button>
         <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>History</button>
         <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
     </div>
+    
   )
 }
 
