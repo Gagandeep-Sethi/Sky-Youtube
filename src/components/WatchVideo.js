@@ -23,6 +23,7 @@ const WatchVideo = () => {
         frameBorder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " 
         allowFullScreen></iframe>
+        <h1>video Details will be available here</h1>
         
         </div>
   )

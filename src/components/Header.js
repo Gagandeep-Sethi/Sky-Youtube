@@ -35,4 +35,3 @@ const Header = () => {
 }
 
 export default Header
-// border border-gray-400 rounded-r-full
