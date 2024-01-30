@@ -11,7 +11,7 @@ const VideoContainer = () => {
   const fetchVideos=async()=>{
     const data=await fetch(video_api)
     const json=await data.json()
-    console.log(json)
+    //console.log(json)
     setVideo(json.items)
   }
   if(video.length===0){
@@ -19,7 +19,7 @@ const VideoContainer = () => {
   }
   return (
     <div className='w-auto flex flex-wrap'>
-      {video.map((res)=><VideoCard info={res}/>)}
+      {video.map((res)=><VideoCard info={res} key={res.id} />)}
         
     </div>
   )

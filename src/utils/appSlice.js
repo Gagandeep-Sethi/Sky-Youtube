@@ -7,9 +7,10 @@ const appSlice=createSlice({
 
     },
     reducers:{
-        open:(state)=>{state.openSide=!state.openSide}
+        open:(state)=>{state.openSide=!state.openSide},
+        close:(state)=>{state.openSide=true}
     }
 
 })
 export default appSlice.reducer
-export const {open} =appSlice.actions
+export const {open,close} =appSlice.actions

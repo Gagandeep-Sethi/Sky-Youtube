@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 const Sidebar = () => {
   const clicked=useSelector(store=>store.app.openSide)
   if(clicked)
@@ -8,7 +9,7 @@ const Sidebar = () => {
     
       <div className=' w-[237.33px]    '>
         <ul>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Home</li>
+            <Link to="/"><li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Home</li></Link>
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Shorts</li>
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Trending</li>
             <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Shoping </li>
