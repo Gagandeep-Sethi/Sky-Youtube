@@ -9,6 +9,7 @@ import SearchList from './SearchList'
 
 const Header = () => {
   const[search , setSearch]=useState("")
+  const[checked,setChecked]=useState(true)
   // eslint-disable-next-line no-unused-vars
   const[searchValue,setSearchValue]=useState([])
   const dispatch=useDispatch()
@@ -24,8 +25,8 @@ const Header = () => {
   const getSearchResult=async()=>{
     const data=await fetch(youtube_autocomplete_api+search)
     const json=await data.json()
-    console.log(json)
-    setSearchValue(json)
+    console.log(json[1])
+    setSearchValue(json[1])
 
   }
   return (
@@ -36,22 +37,26 @@ const Header = () => {
         </div>
         <div className='w-8/12  '>
           <div >
+          
             <input className='h-10 ml-36 float-start pl-2 w-1/2 border-gray-400 border rounded-l-full' 
             type='text'
             placeholder='Search'
             value={search}
+            onFocus={()=>{setChecked(true)}}
+            onBlur={()=>{setChecked(false)}}
             onChange={(e)=>{
               setSearch(e.target.value)
             }}
             >
             </input>
-            {searchValue&& searchValue.map((r,i)=>{
-             return <SearchList key={i} list={r} />
-            })}            
+               
             </div>
             <button className='h-10 bg-gray-100  rounded-r-full border border-gray-400 hover:bg-gray-200  '>
                 <img className='h-10 px-3 py-2 w-12 rounded-full ' alt="Search" src={search_logo}></img>
             </button>
+            {checked&& searchValue.map((r,i)=>{
+             return <SearchList key={i} list={r} />
+            })}         
 
         </div>
         <div className='w-2/12  '>

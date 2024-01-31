@@ -2,9 +2,9 @@ import React from 'react'
 
 const SearchList = ({list}) => {
   return (
-    <div>
-        <ul>
-            <li>{list[1]}</li>
+    <div >
+        <ul >
+            <li>{list}</li>
         </ul>
     </div>
   )
