@@ -3,23 +3,17 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 const Sidebar = () => {
   const clicked=useSelector(store=>store.app.openSide)
+  const list =["Shorts","Trending","Shoping ","Music","Films","Gaming","Live","News","Sports","Podcasts"]
   if(clicked)
   return (null)
   return  (
     
-      <div className=' w-[237.33px]    '>
+      <div className='     '>
         <ul>
-            <Link to="/"><li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Home</li></Link>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Shorts</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Trending</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Shoping </li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Music</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Films</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Gaming</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Live</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> News</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Sports</li>
-            <li className='py-4 mx-auto text-center rounded-lg hover:bg-gray-200 '> Podcasts</li>
+            <Link to="/"><li className='cursor-pointer border-b-2 p-4 text-center transition ease-out duration-300 hover:bg-red-500 hover:text-white rounded-full '> Home</li></Link>
+            {list.map((r)=>{
+              return <li className='cursor-pointer  border-b-2 border-gray-200 transition ease-out duration-300 p-4 text-center hover:bg-red-500 hover:text-white rounded-full'>{r}</li>
+            })}
             
         </ul>
         </div>

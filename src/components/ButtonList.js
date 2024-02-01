@@ -1,29 +1,16 @@
 import React from 'react'
 
 const ButtonList = () => {
+  const list=["All","Music","News","Tamil Cinema","Dramedy","Lofi","Bollywood Music",'Live',"gameShow","All","Music","News","Tamil Cinema","Dramedy","Lofi","Bollywood Music",'Live',"gameShow"]
   return (
-    <div className='  h-16 flex  overflow-x-scroll  w-[1186.66px] '>
+    <div className='flex overflow-x-auto scroll'>
       
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>All</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Music</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>News</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Tamil Cinema</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Dramedy</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Lofi</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Bollywood Music</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Live</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Game Shows</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Indian Pop Music</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>History</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
-        <button className='p-2 m-2 rounded-xl border border-black hover:bg-gray-200'>Cooking</button>
+        {list.map((r)=>{
+           return  <button className='px-4 py-2 mr-2  rounded-full text-red-600 border  border-red-600 transition ease-out duration-500 hover:bg-red-500 hover:text-white text-nowrap  '>{r}</button>
+        })}
+        
+        
+        
     </div>
     
   )

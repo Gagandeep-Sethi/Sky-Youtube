@@ -4,7 +4,7 @@ const SearchList = ({list}) => {
   return (
     <div >
         <ul >
-            <li>{list}</li>
+            <li className='p-2'>{list}</li>
         </ul>
     </div>
   )

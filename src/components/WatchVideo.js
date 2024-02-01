@@ -14,9 +14,9 @@ const WatchVideo = () => {
 
     
   return (
-    <div className='flex '>
+    <div className=''>
         <Sidebar/>
-        <iframe className='mx-8 my-4 rounded-2xl ' width="920" 
+        <iframe className='' width="920" 
         height="500" 
         src={"https://www.youtube.com/embed/"+video.get("v") }
         title="YouTube video player" 

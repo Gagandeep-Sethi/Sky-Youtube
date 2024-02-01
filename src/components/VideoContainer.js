@@ -18,7 +18,7 @@ const VideoContainer = () => {
     return<h1>loading</h1>
   }
   return (
-    <div className='w-auto flex flex-wrap'>
+    <div className='grid grid-cols-3 '>
       {video.map((res)=><VideoCard info={res} key={res.id} />)}
         
     </div>
