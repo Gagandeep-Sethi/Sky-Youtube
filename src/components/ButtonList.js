@@ -5,8 +5,8 @@ const ButtonList = () => {
   return (
     <div className='flex overflow-x-auto scroll'>
       
-        {list.map((r)=>{
-           return  <button className='px-4 py-2 mr-2  rounded-full text-red-600 border  border-red-600 transition ease-out duration-500 hover:bg-red-500 hover:text-white text-nowrap  '>{r}</button>
+        {list.map((r,i)=>{
+           return  <button key={i} className='px-4 py-2 mr-2  rounded-full text-red-600 border  border-red-600 transition ease-out duration-500 hover:bg-red-500 hover:text-white text-nowrap  '>{r}</button>
         })}
         
         

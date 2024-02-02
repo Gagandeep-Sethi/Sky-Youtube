@@ -1,32 +1,45 @@
 import React, { useEffect, useState } from 'react'
 import { youtube_logo, youtube_autocomplete_api } from '../utils/constant'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { open } from '../utils/appSlice'
 import SearchList from './SearchList'
+import { searchCache } from '../utils/searchSlice'
 
 
 
 
 const Header = () => {
   const[search , setSearch]=useState("")
-  const[checked,setChecked]=useState(true)
+  //const[checked,setChecked]=useState(true)
   // eslint-disable-next-line no-unused-vars
   const[searchValue,setSearchValue]=useState([])
+  const searchData=useSelector((store)=>store.search)
   const dispatch=useDispatch()
   const menuClick=()=>{
      dispatch(open())
   }
   useEffect(()=>{
-    const timer=setTimeout(()=>getSearchResult(),200)//it is how delay is added to search api call to decrease api calls by few and optimize it more
-    return(()=>clearTimeout(timer))//cleartimeout is done here bcz to again set the clock to 200 ms delay otherwise timer will keep going (as when our state is updates means it is rerendered as it is destroyed and in this case it is dependend on it so so return of useEffect will be called)
+    const timer=setTimeout(()=>{
+    if (searchData[search]) {
+      setSearchValue(searchData[search])
+    }
+    else{
+      getSearchResult();
+    }},200)
+
+            //it is how delay is added to search api call to decrease api calls by few and optimize it more
+    return(()=>clearTimeout(timer))  
+                           //cleartimeout is done here bcz to again set the clock to 200 ms delay otherwise timer will keep going (as when our state is updates means it is rerendered as it is destroyed and in this case it is dependend on it so so return of useEffect will be called)
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[search])
+
   const getSearchResult=async()=>{
     const data=await fetch(youtube_autocomplete_api+search)
     const json=await data.json()
-    //console.log(json[1])
+    console.log(json[1])
     setSearchValue(json[1])
+    dispatch(searchCache({[search]:json[1]}))
 
   }
   return (
@@ -41,12 +54,12 @@ const Header = () => {
         <div className=' '>
           <div className='flex content-end justify-center relative'>
           
-            <input className='p-2 border border-gray-400 w-2/3 rounded-l-full pl-2' 
+            <input className='p-2 border border-gray-400 w-2/3 rounded-l-full pl-4' 
             type='text'
             placeholder='Search'
             value={search}
-            onFocus={()=>{setChecked(true)}}
-            onBlur={()=>{setChecked(false)}}
+            // onFocus={()=>{setChecked(true)}}
+            // onBlur={()=>{setChecked(false)}}
             onChange={(e)=>{
               setSearch(e.target.value)
             }}
@@ -54,7 +67,7 @@ const Header = () => {
             </input>
             <button className='block border border-gray-400 rounded-r-full p-2   '>
                 
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-4  ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-6  ">
                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
 
@@ -62,8 +75,9 @@ const Header = () => {
                
             </div>
             <div className='absolute top-20  left-[550px] w-80  bg-white '>
-            {checked&& searchValue.map((r,i)=>{
-             return  <SearchList  key={i} list={r} />
+              {/* checked&& */}
+            {searchValue.map((r,i)=>{
+             return  <SearchList  key={i} list={r} setResult={()=>{ setSearch(r)}}/>
             })}   
             </div>
              
@@ -81,3 +95,7 @@ const Header = () => {
 }
 
 export default Header
+
+
+
+

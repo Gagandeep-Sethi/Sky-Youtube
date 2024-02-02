@@ -12,7 +12,7 @@ const Sidebar = () => {
         <ul>
             <Link to="/"><li className='cursor-pointer border-b-2 p-4 text-center transition ease-out duration-300 hover:bg-red-500 hover:text-white rounded-full '> Home</li></Link>
             {list.map((r)=>{
-              return <li className='cursor-pointer  border-b-2 border-gray-200 transition ease-out duration-300 p-4 text-center hover:bg-red-500 hover:text-white rounded-full'>{r}</li>
+              return <li key={r} className='cursor-pointer  border-b-2 border-gray-200 transition ease-out duration-300 p-4 text-center hover:bg-red-500 hover:text-white rounded-full'>{r}</li>
             })}
             
         </ul>
