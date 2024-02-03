@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (null)
   return  (
     
-      <div className='     '>
+      <div className='w-[237px]     '>
         <ul>
             <Link to="/"><li className='cursor-pointer border-b-2 p-4 text-center transition ease-out duration-300 hover:bg-red-500 hover:text-white rounded-full '> Home</li></Link>
             {list.map((r)=>{

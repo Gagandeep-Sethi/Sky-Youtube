@@ -7,3 +7,4 @@ export const search_logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
 
 export const video_api="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+process.env.REACT_APP_Google_ApiKey
 export const youtube_autocomplete_api="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
+export const chat_length="200"
