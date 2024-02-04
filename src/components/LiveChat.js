@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import ChatMessage from './ChatMessage'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { addMsg, removeMsg } from '../utils/chatSlice'
+import { addMsg} from '../utils/chatSlice'
 import { nameGenerator, randomText } from '../utils/helper'
 
-const LiveChat = ({name ,message}) => {
+const LiveChat = () => {
     const messages=useSelector((store)=>store.chat.messages)
     console.log(messages.length)
     const [ourChat,setOurChat]=useState("")
@@ -17,17 +17,15 @@ const LiveChat = ({name ,message}) => {
 
 
         },1500)
-        if(message.length===10){
-            dispatch(removeMsg())
-        }
-        return (()=>clearInterval(msgInterval))
+        
+        return (()=>clearInterval(msgInterval))   //it works as garbage collector otherwise it will keep doing it even if we are on another page
 
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     const getChat=()=>{
         return({
-            name:nameGenerator,
+            name:nameGenerator(),
             message:randomText(20)
         })
     }
@@ -35,7 +33,7 @@ const LiveChat = ({name ,message}) => {
   return (
     <div className=''>
         <div className='h-[460px] overflow-y-auto flex flex-col-reverse '>
-            {message.length>0 ?messages.map((r)=><ChatMessage name={r.name} message={r.message} />) :null}
+            {messages.length>0 ?messages.map((r)=><ChatMessage name={r.name} message={r.message} />) :null}
 
             
 
@@ -55,6 +53,11 @@ const LiveChat = ({name ,message}) => {
             className='mr-2'
             onClick={(e)=>{
                 e.preventDefault()
+                
+                dispatch(addMsg({
+                    name:"Sky",
+                    message:ourChat,
+                }))
                 setOurChat("")
             }}
             >
@@ -72,3 +75,7 @@ const LiveChat = ({name ,message}) => {
 }
 
 export default LiveChat
+
+
+
+

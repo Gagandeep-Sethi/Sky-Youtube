@@ -38,7 +38,7 @@ const WatchVideo = () => {
         
         </div>
         <div className='bg-slate-200 w-full h-[500px] ml-2 rounded-xl '>
-          <LiveChat name="user" message="jhgjcvcvccvcvbc"/>
+          <LiveChat />
         </div>
         
         

@@ -7,7 +7,7 @@ const searchSlice=createSlice({
     },
     reducers:{
         searchCache:(state,action)=>{
-            state=Object.assign(state,action.payload)
+            state=Object.assign(state , action.payload)//object is addedin state object (...state , ...action.payload)
 
         }
     }
