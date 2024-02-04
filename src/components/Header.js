@@ -20,8 +20,8 @@ const Header = () => {
   }
   useEffect(()=>{
     const timer=setTimeout(()=>{
-    if (searchData[search]) {
-      setSearchValue(searchData[search])
+    if (searchData[search]) {              //it is also a way to search property inside obj and it is more better like if we want to search a property name ip22 but we cannot do that using. method
+      setSearchValue(searchData[search])   
     }
     else{
       getSearchResult();
@@ -39,7 +39,7 @@ const Header = () => {
     const json=await data.json()
     console.log(json[1])
     setSearchValue(json[1])
-    dispatch(searchCache({[search]:json[1]}))
+    dispatch(searchCache({[search]:json[1]}))             //[search] this will give the value of current value of search state and if we will use just search it will be passed as a key name search instead of current search value
 
   }
   return (
