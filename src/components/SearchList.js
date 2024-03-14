@@ -5,9 +5,9 @@ const SearchList = ({list,setResult}) => {
     setResult()
   }
   return (
-    <div >
-        <ul >
-            <li onClick={handleClick} className='p-2 cursor-pointer'>{list}</li>
+    <div className='bg-white z-10'>
+        <ul className='bg-whie '>
+            <li onClick={handleClick} className='p-2 cursor-pointer bg-white hover:bg-gray-100 border-b border-gray-400'>{list}</li>
         </ul>
     </div>
   )
