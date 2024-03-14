@@ -5,12 +5,12 @@ import VideoContainer from './VideoContainer'
 const Body = () => {
   
   return (
-    <div className="grid grid-cols-12 mt-6 ">
-        <div className='col-span-2' >
+    <div className="w-full flex  ">
+        <div className='absolute z-10' >
         <Sidebar /></div>
-        <div className='col-span-10 ml-8 '>
-        <ButtonList className="   "/>
-        <div className='pt-4'>
+        <div className='overflow-x-scroll py-2'>
+        <ButtonList className="  "/>
+        <div className=' '>
         <VideoContainer className=""/> </div>
         </div>
     </div>
