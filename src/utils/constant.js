@@ -8,4 +8,4 @@ export const video_api="https://youtube.googleapis.com/youtube/v3/videos?part=sn
 export const youtube_autocomplete_api="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
 export const chat_length="200"
 
-//REACT_APP_Google_ApiKey="" this how key is stored in .env file
+//REACT_APP_Google_ApiKey="" this how key is stored in .env file //google cloud to get api key console.cloud.google.com

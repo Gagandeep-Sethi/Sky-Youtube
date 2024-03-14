@@ -8,11 +8,11 @@ const Sidebar = () => {
   return (null)
   return  (
     
-      <div className='w-[237px]     '>
+      <div className='w-72 bg-white rounded-3xl min-h-screen fixed    '>
         <ul>
             <Link to="/"><li className='cursor-pointer border-b-2 p-4 text-center transition ease-out duration-300 hover:bg-red-500 hover:text-white rounded-full '> Home</li></Link>
             {list.map((r)=>{
-              return <li key={r} className='cursor-pointer  border-b-2 border-gray-200 transition ease-out duration-300 p-4 text-center hover:bg-red-500 hover:text-white rounded-full'>{r}</li>
+              return <li key={r} className='cursor-pointer  border-b-2 border-gray-200 transition ease-out duration-200 p-4 text-center hover:bg-red-500 hover:text-white rounded-full'>{r}</li>
             })}
             
         </ul>

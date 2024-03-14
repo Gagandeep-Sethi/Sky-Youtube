@@ -7,7 +7,7 @@ import { nameGenerator, randomText } from '../utils/helper'
 
 const LiveChat = () => {
     const messages=useSelector((store)=>store.chat.messages)
-    console.log(messages.length)
+    
     const [ourChat,setOurChat]=useState("")
     const dispatch=useDispatch()
     useEffect(()=>{
@@ -33,7 +33,7 @@ const LiveChat = () => {
   return (
     <div className=''>
         <div className='h-[460px] overflow-y-auto flex flex-col-reverse '>
-            {messages.length>0 ?messages.map((r)=><ChatMessage name={r.name} message={r.message} />) :null}
+            {messages.length>0 ?messages.map((r,i)=><ChatMessage key={i} name={r.name} message={r.message} />) :null}
 
             
 
@@ -42,7 +42,7 @@ const LiveChat = () => {
             <input
             className='pl-2 rounded-xl  w-full border border-black'
             value={ourChat}
-            placeholder='Type to chat...'
+            placeholder='(Sky)Type to chat...'
             onChange={(e)=>{
                 setOurChat(e.target.value)
 
